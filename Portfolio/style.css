@@ -616,3 +616,43 @@ section{
         height:220px;
     }
 }
+
+.btn,
+.btn-outline{
+    transition:0.3s ease;
+}
+
+.btn:hover,
+.btn-outline:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+.hero-text{
+    animation:fadeUp 1s ease;
+}
+
+.hero-image{
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
