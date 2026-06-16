@@ -67,7 +67,22 @@ nav a:hover{
     align-items: center;
 }
 
-.hero::before {
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+}
+
+.overlay{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
 .overlay h1{
     font-size:55px;
 }
@@ -330,7 +345,7 @@ footer{
 }
 .about-hero{
     height:300px;
-    background:url("images/bakery.jpg") center/cover;
+    background:url("images/about.jpg") center/cover;
     display:flex;
     justify-content:center;
     align-items:center;
