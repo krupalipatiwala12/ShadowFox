@@ -56,23 +56,18 @@ nav a:hover{
 }
 
 .hero{
-    background:url("images/bakery.jpg");
-    background-size:cover;
-    background-position:center;
-    height:90vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    position: relative;
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.overlay{
-    background:rgba(0,0,0,0.6);
-    padding:50px;
-    text-align:center;
-    color:white;
-    border-radius:10px;
-}
-
+.hero::before {
 .overlay h1{
     font-size:55px;
 }
@@ -1583,7 +1578,6 @@ footer{
     background-repeat: no-repeat;
 }
 
-/* dark layer */
 .hero::before {
     content: "";
     position: absolute;
@@ -1594,7 +1588,6 @@ footer{
     background: rgba(0,0,0,0.4);
 }
 
-/* keep text above overlay */
 .hero .overlay {
     position: relative;
     z-index: 1;
