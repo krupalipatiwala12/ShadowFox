@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Bakers Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Bakers Studio
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Shop</a>
+
+        <a href="customcake.html">Custom Cakes</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="contact.html">Contact</a>
+
+        <div class="nav-icons">
+
+            <a href="wishlist.html">
+                ❤
+            </a>
+
+            <a href="cart.html">
+                🛒
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<div class="filter-buttons">
+
+    <button onclick="filterProducts('all')">All</button>
+
+    <button onclick="filterProducts('cakes')">Cakes</button>
+
+    <button onclick="filterProducts('pastries')">Pastries</button>
+
+    <button onclick="filterProducts('cookies')">Cookies</button>
+
+    <button onclick="filterProducts('desserts')">Desserts</button>
+
+</div>
+
+<section class="best-sellers">
+
+    <h2>Best Sellers</h2>
+
+    <div class="product-container">
+
+        <div class="best-card">
+            <img src="images/kitkatcake.jpg">
+            <h3>KitKat Cake</h3>
+            <p>₹999</p>
+        </div>
+
+        <div class="best-card">
+            <img src="images/BiscoffCheesecake.jpg">
+            <h3>Biscoff Cheesecake</h3>
+            <p>₹899</p>
+        </div>
+
+        <div class="best-card">
+            <img src="images/chocolavacake.jpg">
+            <h3>Choco Lava Cake</h3>
+            <p>₹449</p>
+        </div>
+
+    </div>
+
+</section>
+
+<h2 class="all-products-title">
+    All Bakery Products
+</h2>
+
+<section class="products">
+
+    <div class="product-container">
+
+        <div class="card" data-category="cakes">
+
+            <img src="images/cake.jpg">
+
+            <div class="card-content">
+                <h3>Chocolate Cake</h3>
+                <p>Rich layered chocolate cake.</p>
+            </div>
+
+            <div class="product-hover">
+                <h3>Chocolate Cake</h3>
+                <p>Premium chocolate cake with creamy frosting.</p>
+                <span>₹799</span>
+                <button class="cart-btn"
+        data-name="Chocolate Cake"
+        data-price="799"
+        data-image="images/cake.jpg">
+        Add To Cart
+    </button>
+
+    <button class="wish-btn"
+    data-name="Chocolate Cake"
+    data-price="799"
+    data-image="images/cake.jpg">
+    Wishlist
+    </button>
+            </div>
+
+        </div>
+
+        <div class="card" data-category="pastries">
+
+            <img src="images/croissant.jpg">
+
+            <div class="card-content">
+                <h3>Butter Croissant</h3>
+                <p>Fresh flaky french croissants.</p>
+            </div>
+
+            <div class="product-hover">
+                <h3>Butter Croissant</h3>
+                <p>Soft buttery croissants baked fresh daily.</p>
+                <span>₹299</span>
+                <button class="cart-btn"
+                data-name="Butter Croissant"
+                data-price="299"
+                data-image="images/croissant.jpg">
+                Add To Cart
+            </button>
+
+<button class="wish-btn"
+    data-name="Butter Croissant"
+    data-price="299"
+    data-image="images/croissant.jpg">
+    Wishlist
+</button>
+            </div>
+
+        </div>
+
+        <div class="card" data-category="desserts">
+
+            <img src="images/brownie.jpg">
+
+            <div class="card-content">
+                <h3>Chocolate Brownies</h3>
+                <p>Fudgy brownies with chocolate chips.</p>
+            </div>
+
+            <div class="product-hover">
+                <h3>Chocolate Brownies</h3>
+                <p>Rich chocolate brownies with soft texture.</p>
+                <span>₹399</span>
+                <button class="cart-btn"
+        data-name="Chocolate Brownies"
+        data-price="399"
+        data-image="images/brownie.jpg">
+        Add To Cart
+    </button>
+
+    <button class="wish-btn"
+data-name="Chocolate Brownies"
+data-price="399"
+data-image="images/brownie.jpg">
+Wishlist
+</button>
+            </div>
+
+        </div>
+
+        <div class="card" data-category="desserts">
+
+            <img src="images/BiscoffCheesecake.jpg">
+
+            <div class="card-content">
+                <h3>Biscoff Cheesecake</h3>
+                <p>Creamy lotus biscoff cheesecake.</p>
+            </div>
+
+            <div class="product-hover">
+                <h3>Biscoff Cheesecake</h3>
+                <p>Cheesecake topped with caramelized biscoff spread.</p>
+                <span>₹899</span>
+                <button class="cart-btn"
+        data-name="Biscoff Cheesecake"
+        data-price="899"
+        data-image="images/BiscoffCheesecake.jpg">
+        Add To Cart
+    </button>
+
+    <button class="wish-btn"
+        data-name="Biscoff Cheesecake"
+        data-price="899"
+        data-image="images/BiscoffCheesecake.jpg">
+        Wishlist
+    </button>
+            </div>
+
+        </div>
+
+        <div class="card" data-category="desserts">
+
+            <img src="images/StrawberryCreamRoll.jpg">
+
+            <div class="card-content">
+                <h3>Strawberry Cream Roll</h3>
+                <p>Soft sponge roll with cream filling.</p>
+            </div>
+
+            <div class="product-hover">
+                <h3>Strawberry Cream Roll</h3>
+                <p>Fresh strawberry flavored cream dessert roll.</p>
+                <span>₹499</span>
+                <button class="cart-btn"
+        data-name="Strawberry Cream Roll"
+        data-price="499"
+        data-image="images/StrawberryCreamRoll.jpg">
+        Add To Cart
+    </button>
+
+    <button class="wish-btn"
+        data-name="Strawberry Cream Roll"
+        data-price="499"
+        data-image="images/StrawberryCreamRoll.jpg">
+        Wishlist
+    </button>
+            </div>
+
+        </div>
+
+        <div class="card" data-category="desserts">
+
+            <img src="images/waffle.jpg">
+
+            <div class="card-content">
+                <h3>Belgian Waffles</h3>
+                <p>Crispy waffles with syrup.</p>
+            </div>
+
+            <div class="product-hover">
+                <h3>Belgian Waffles</h3>
+                <p>Golden crispy waffles served with chocolate sauce.</p>
+                <span>₹599</span>
+                <button class="cart-btn"
+        data-name="Belgian Waffles"
+        data-price="599"
+        data-image="images/waffle.jpg">
+        Add To Cart
+    </button>
+
+    <button class="wish-btn"
+        data-name="Belgian Waffles"
+        data-price="599"
+        data-image="images/waffle.jpg">
+        Wishlist
+    </button>
+            </div>
+            
+        </div>
+
+            <div class="card" data-category="cookies">
+
+    <img src="images/macaron.jpg">
+
+    <div class="card-content">
+        <h3>Colorful Macarons</h3>
+        <p>Sweet french macarons with different flavors.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Colorful Macarons</h3>
+        <p>Light crispy macarons with creamy fillings.</p>
+        <span>₹699</span>
+        <button class="cart-btn"
+            data-name="Colorful Macarons"
+            data-price="699"
+            data-image="images/macaron.jpg">
+            Add To Cart
+        </button>
+
+        <button class="wish-btn"
+            data-name="Colorful Macarons"
+            data-price="699"
+            data-image="images/macaron.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="cookies">
+
+    <img src="images/cookies.jpg">
+
+    <div class="card-content">
+        <h3>Chocolate Cookies</h3>
+        <p>Crispy cookies filled with melted chocolate.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Chocolate Cookies</h3>
+        <p>Freshly baked cookies with chocolate chunks.</p>
+        <span>₹349</span>
+        <button class="cart-btn"
+            data-name="Chocolate Cookies"
+            data-price="349"
+            data-image="images/cookies.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Chocolate Cookies"
+            data-price="349"
+            data-image="images/cookies.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="desserts">
+
+    <img src="images/muffin.jpg">
+
+    <div class="card-content">
+        <h3>Blueberry Muffins</h3>
+        <p>Fresh muffins filled with blueberry cream.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Blueberry Muffins</h3>
+        <p>Soft blueberry muffins baked every morning.</p>
+        <span>₹399</span>
+        <button class="cart-btn"
+            data-name="Blueberry Muffins"
+            data-price="399"
+            data-image="images/muffin.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Blueberry Muffins"
+            data-price="399"
+            data-image="images/muffin.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="cakes">
+
+    <img src="images/tiramisu.jpg">
+
+    <div class="card-content">
+        <h3>Tiramisu Cake</h3>
+        <p>Italian layered dessert with coffee flavor.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Tiramisu Cake</h3>
+        <p>Classic Italian dessert with rich coffee cream.</p>
+        <span>₹899</span>
+        <button class="cart-btn"
+            data-name="Tiramisu Cake"
+            data-price="899"
+            data-image="images/tiramisu.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Tiramisu Cake"
+            data-price="899"
+            data-image="images/tiramisu.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="desserts">
+
+    <img src="images/LemonCheesecake.jpg">
+
+    <div class="card-content">
+        <h3>Lemon Cheesecake</h3>
+        <p>Refreshing cheesecake with lemon flavor.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Lemon Cheesecake</h3>
+        <p>Fresh creamy cheesecake with citrus flavor.</p>
+        <span>₹799</span>
+        <button class="cart-btn"
+            data-name="Lemon Cheesecake"
+            data-price="799"
+            data-image="images/LemonCheesecake.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Lemon Cheesecake"
+            data-price="799"
+            data-image="images/LemonCheesecake.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="pastries">
+
+    <img src="images/FerreroPastry.jpg">
+
+    <div class="card-content">
+        <h3>Ferrero Pastry</h3>
+        <p>Chocolate pastry inspired by Ferrero flavors.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Ferrero Pastry</h3>
+        <p>Premium chocolate pastry with hazelnut cream.</p>
+        <span>₹599</span>
+        <button class="cart-btn"
+            data-name="Ferrero Pastry"
+            data-price="599"
+            data-image="images/FerreroPastry.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Ferrero Pastry"
+            data-price="599"
+            data-image="images/FerreroPastry.jpg">
+            Wishlist
+            </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="pastries">
+
+    <img src="images/pizzapuff.jpg">
+
+    <div class="card-content">
+        <h3>Pizza Puff</h3>
+        <p>Crispy puff stuffed with cheesy pizza filling.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Pizza Puff</h3>
+        <p>Fresh baked puff loaded with veggies and cheese.</p>
+        <span>₹249</span>
+        <button class="cart-btn"
+            data-name="Pizza Puff"
+            data-price="249"
+            data-image="images/pizzapuff.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Pizza Puff"
+            data-price="249"
+            data-image="images/pizzapuff.jpg">
+            Wishlist
+            </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="cakes">
+
+    <img src="images/kitkatcake.jpg">
+
+    <div class="card-content">
+        <h3>KitKat Cake</h3>
+        <p>Chocolate cake topped with crunchy KitKat bars.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>KitKat Cake</h3>
+        <p>Rich chocolate cake decorated with KitKat and gems.</p>
+        <span>₹999</span>
+        <button class="cart-btn"
+            data-name="KitKat Cake"
+            data-price="999"
+            data-image="images/kitkatcake.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="KitKat Cake"
+            data-price="999"
+            data-image="images/kitkatcake.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="cookies">
+
+    <img src="images/almondbiscotti.jpg">
+
+    <div class="card-content">
+        <h3>Almond Biscotti</h3>
+        <p>Crunchy italian almond cookies baked twice.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Almond Biscotti</h3>
+        <p>Crispy almond biscotti perfect with coffee.</p>
+        <span>₹399</span>
+        <button class="cart-btn"
+            data-name="Almond Biscotti"
+            data-price="399"
+            data-image="images/almondbiscotti.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Almond Biscotti"
+            data-price="399"
+            data-image="images/almondbiscotti.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="pastries">
+
+    <img src="images/croissantsandwich.jpg">
+
+    <div class="card-content">
+        <h3>Croissant Sandwich</h3>
+        <p>Buttery croissant filled with fresh veggies and cheese.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Croissant Sandwich</h3>
+        <p>Freshly prepared croissant sandwich with creamy filling.</p>
+        <span>₹499</span>
+        <button class="cart-btn"
+            data-name="Croissant Sandwich"
+            data-price="499"
+            data-image="images/croissantsandwich.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Croissant Sandwich"
+            data-price="499"
+            data-image="images/croissantsandwich.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="cakes">
+
+    <img src="images/rainbowcake.jpg">
+
+    <div class="card-content">
+        <h3>Rainbow Cake</h3>
+        <p>Colorful layered cake with creamy frosting.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Rainbow Cake</h3>
+        <p>Beautiful rainbow cake with soft sponge layers.</p>
+        <span>₹1099</span>
+        <button class="cart-btn"
+            data-name="Rainbow Cake"
+            data-price="1099"
+            data-image="images/rainbowcake.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Rainbow Cake"
+            data-price="1099"
+            data-image="images/rainbowcake.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-category="cakes">
+
+    <img src="images/chocolavacake.jpg">
+
+    <div class="card-content">
+        <h3>Choco Lava Cake</h3>
+        <p>Warm chocolate cake with molten center.</p>
+    </div>
+
+    <div class="product-hover">
+        <h3>Choco Lava Cake</h3>
+        <p>Rich chocolate lava cake with gooey filling.</p>
+        <span>₹449</span>
+        <button class="cart-btn"
+            data-name="Choco Lava Cake"
+            data-price="449"
+            data-image="images/chocolavacake.jpg">
+            Add To Cart
+        </button>
+        <button class="wish-btn"
+            data-name="Choco Lava Cake"
+            data-price="449"
+            data-image="images/chocolavacake.jpg">
+            Wishlist
+        </button>
+    </div>
+
+</div>
+        </div>
+
+</section>
+
+<footer>
+
+    <p>© Bakers Studio</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

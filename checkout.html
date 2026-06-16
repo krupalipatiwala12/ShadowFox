@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Bakers Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Bakers Studio
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<section class="checkout-page">
+
+    <h1>Checkout</h1>
+
+    <div class="order-summary">
+
+        <h3>Your Order</h3>
+
+        <div id="cartItems"></div>
+
+        <div class="summary-box">
+            <p id="subtotal">Subtotal: ₹0</p>
+            <p>Delivery: ₹50</p>
+            <hr>
+            <h4 id="total">Total: ₹50</h4>
+        </div>
+
+    </div>
+
+    <form id="checkoutForm">
+
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <textarea placeholder="Delivery Address" required></textarea>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+    <h2 id="successMessage" style="display:none;"></h2>
+
+</section>
+
+
+<footer>
+
+    <p>© Bakers Studio</p>
+
+</footer>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let cartItemsDiv = document.getElementById("cartItems");
+let subtotalText = document.getElementById("subtotal");
+let totalText = document.getElementById("total");
+
+const delivery = 50;
+
+function renderCheckout() {
+
+    cartItemsDiv.innerHTML = "";
+
+    let subtotal = 0;
+
+    if (cart.length === 0) {
+
+        cartItemsDiv.innerHTML = "<p>🛒 Your cart is empty</p>";
+
+        subtotalText.innerText = "Subtotal: ₹0";
+        totalText.innerText = "Total: ₹50";
+
+        return;
+    }
+
+cart.forEach(function(item){
+
+    let price = Number(item.price);
+    let quantity = Number(item.quantity);
+
+    let itemTotal = price * quantity;
+
+    subtotal += itemTotal;
+
+    cartItemsDiv.innerHTML += `
+
+    <div class="checkout-item">
+
+        <img src="${item.image}" alt="${item.name}">
+
+        <div class="checkout-details">
+
+            <h4>${item.name}</h4>
+
+            <p>Quantity: ${quantity}</p>
+
+            <p>Price: ₹${price}</p>
+
+            <p>Total: ₹${itemTotal}</p>
+
+        </div>
+
+    </div>
+
+    `;
+
+});
+
+    subtotalText.innerText = "Subtotal: ₹" + subtotal;
+
+    totalText.innerText = "Total: ₹" + (subtotal + delivery);
+
+}
+
+renderCheckout();
+
+document.getElementById("checkoutForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    if(cart.length === 0){
+
+        alert("🛒 Your cart is empty!");
+
+        return;
+    }
+
+    let totalAmount = 0;
+
+    cart.forEach(function(item){
+
+        totalAmount += Number(item.price) * Number(item.quantity);
+
+    });
+
+    totalAmount += delivery;
+
+    localStorage.removeItem("cart");
+
+    cart = [];
+
+    renderCheckout();
+
+    document.getElementById("successMessage").style.display = "block";
+
+    document.getElementById("successMessage").innerText =
+    "🎉 Order Placed Successfully! Total Paid: ₹" + totalAmount;
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>

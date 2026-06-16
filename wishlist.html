@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Bakers Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Bakers Studio
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="customcake.html">Custom Cakes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="nav-icons">
+            <a href="wishlist.html">❤</a>
+            <a href="cart.html">🛒</a>
+        </div>
+    </nav>
+
+</header>
+
+<section class="wishlist-page">
+
+    <h1>My Wishlist ❤</h1>
+
+    <div id="wishlist-items" class="wishlist-container"></div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 Bakers Studio</p>
+
+</footer>
+
+<script>
+
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+let container = document.getElementById("wishlist-items");
+
+if(wishlist.length === 0){
+
+    container.innerHTML = "<h2>Your wishlist is empty.</h2>";
+
+}
+
+wishlist.forEach(function(product,index){
+
+    container.innerHTML += `
+
+<div class="wishlist-card">
+
+    <img src="${product.image}">
+
+    <h3>${product.name}</h3>
+
+    <p>₹${product.price}</p>
+
+    <button onclick="addToCart(${index})">
+        Add To Cart
+    </button>
+
+    <button class="remove-btn" onclick="removeWishlist(${index})">
+        Remove
+    </button>
+
+</div>
+
+`;
+
+});
+
+function removeWishlist(index){
+
+    wishlist.splice(index,1);
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    location.reload();
+
+}
+
+function addToCart(index){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let product = wishlist[index];
+
+    let existing = cart.find(item => item.name === product.name);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }
+    else{
+
+        cart.push({
+
+            name: product.name,
+            price: Number(product.price),
+            image: product.image,
+            quantity: 1
+
+        });
+
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(product.name + " added to cart 🛒");
+
+}
+
+</script>
+
+</body>
+</html>
